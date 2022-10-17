@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "phi-kappa-theta",
+  "private_key_id": "d7541d27ff30a1cadeb00a0a82586c3afa55bac9",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC40foCCuCcFMUY\npU43KLojRmIlMqSa4R8O2EsME685gqQgi0E85tXBe/jEpc8cvx0vK6qpzwyf08yX\nj3IO8hG09VZ6t7nSc4DUgWXQlF3b+qgdxW0sVvoRW6wpXcy5ScP8eZSH0Sbl/nVm\nWUyim0aiWJp0ISDzzIJOFjIdQiioLSePAtS/efvwscgxDXFEYg2KfEIkH6Jtk7PC\nK1IFdC3zC5xOTtnJwRG3xdgWS1Xg0bo5QzzuR0NJP0nB4lX2dU+njTSLlExUY6nL\nG5osIAJP6e7h2X9GpXEoxWwtLpB3+O6pUXiutVJlmdhLu+jMwslB+zk8MLkyH2A5\n7ljj2QsDAgMBAAECggEAAymJ6YxeGM2SLGsc/NH0PV5Fl6ACM6mJFSvw53KpcNvM\ntccsL+qTMGL6oq1jmc5QpYSjFZIMA+q6eW1kOjU8xafc+ZnjKA1UivjxJlx42VFf\nRwMgbGh15uN2p/k0ONy2PxT6zEgb2PDoTqlV0lfDIaFPzeTd4iNW/MG3IcuxU7n1\nPB/GiJ+8SuTSfvEDtR2AxsQCG09ltN8eeL+yYEqAWB4pblDfp/Oc1obxkhTKIfpy\nKs8uGSnm4/7RoAN7iqO9e9vwoOIJVKIcuYNyX+qiu5SASqD4L6KJ21R9oDJhKAgl\nB1/upvSVnGG5m1w1HMqbVoW1GlnwwYybWZ8xxvxf4QKBgQDzsPi/74goXOXYp/QJ\nh2bGhpZFID3Uzy+Mphzoh++YZzEZ1zFNDQHWKwJTuc1Lyo+Yu33JdOJkho2ywxaZ\nmSvMsN2fJQziHnX+h/HJKEZHagygC78pgDb9gz3dSOt/GsHOP5FT+4TgG2+M8bsx\nidupqfULVVMyi4wDVU4kPU/CjQKBgQDCJ8cdjHVsFwru+w5zbY+yaCvNE14SDBdK\nJU1Rcg4HGSGwn/zVTOUaL6rWnp3z17lsFkWzUdJxDEXEUB8+KbQF8mdUYCMRBVoH\nlLQKFUZnmGriD1i0AEEPYIDyk+Y4sKDQxSfJBnbwFy1+PjFP14OOIzNQ5PPzcBTU\n7S1HomRnzwKBgQDaz8croIrjozaG6ZgIjlnMXMDFZQPf+AE8C1Pdv2F1uQKvrzgH\ndWx2v7uhLi6WpVV20LNLlvZJSUAmiWHbnVtkulLlOUFuL+fHGo4SD2W7bg/UDXgi\nbYvy6ks8TOOYB5CJ/y4g+LEBAeGR7uQkwSJKH991w7GmqwKXY5t8ksjxaQKBgQCX\n8ftxU5A9tFbZKl9n1FGGBOJqjwKqyw2a+FBnMgRqZ6+nA74hzBjsAmwHpIDm6Wfy\ngAeyS5GO6VTcSvv4cTizAr79GHO5CWAo2KaB0Z6UyoKzQeFglWZVO2gO79JXgVuJ\npxH4z/da9DilONTssDQDk+bAIz4LwSZ8cNVj32IGnwKBgCnzaIaEPDAEI6rA0Yjj\nOuLR0eCwmIimIKqdEAgRDmSglasiTLOnXrJ/PnBuikVJu+z1FBTfFxb3C4/2Z98T\nLnPH6kMYoceQI89CROVRpmadVxh0o2uDachQ3YdU8+LJaXmGNVJE4FLCv60jIN54\nWM/l68P/OPrY5nWE4URvmPIq\n-----END PRIVATE KEY-----\n",
+  "client_email": "partybot@phi-kappa-theta.iam.gserviceaccount.com",
+  "client_id": "101146468027237252964",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/partybot%40phi-kappa-theta.iam.gserviceaccount.com"
+}

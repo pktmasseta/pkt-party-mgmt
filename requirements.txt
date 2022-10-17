@@ -2,4 +2,4 @@ streamlit
 gspread
 pandas
 qrcode
-opencv-python
+opencv-python-headless

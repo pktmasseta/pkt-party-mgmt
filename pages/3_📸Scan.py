@@ -4,6 +4,7 @@ import streamlit as st
 from util import *
 
 if check_password():
+    df = sheet.get_df()
     image = st.camera_input("Show QR code")
     # image = st.file_uploader("Show QR Code")
 
@@ -16,3 +17,8 @@ if check_password():
         data, bbox, straight_qrcode = detector.detectAndDecode(cv2_img)
 
         st.write(f"Scanned: `{data}`")
+
+        if data in df['Unique ID']:
+            st.success("You're in!")
+        else:
+            st.error("You're not in!")

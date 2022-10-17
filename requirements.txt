@@ -1,0 +1,5 @@
+streamlit
+gspread
+pandas
+qrcode
+opencv-python

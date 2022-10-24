@@ -17,7 +17,7 @@ if check_password():
     df = sheet.get_df()
 
     f"""
-**Current Total Invite Count:** {df["PlusOnes"].sum() + len(df)}
+**Current Total Invite Count:** {df["PlusOnes"].sum() + len(df) - 1}
 """
 
     initials = st.text_input("Initials")

@@ -25,7 +25,18 @@ if check_password():
         uid = uuid.uuid4()
         img = qrcode.make(uid)
         img.save(f"{uid}.png")
-        st.image(f"{uid}.png")
+
+        from PIL import Image, ImageDraw, ImageFilter
+        import os
+
+        template = Image.open('template.png')
+        qr = Image.open(f'{uid}.png')
+        width, height = qr.size
+        os.remove(f'{uid}.png')
+
+        template.paste(qr.resize((width * 2, height * 2)), (180, 300))
+        st.image(template)
+
 
         new_row = {"Initials": initials, "Name": name, "PlusOnes": int(plus_ones), "Checked In": 0, "Unique ID": uid}
         df2 = df.append(new_row, ignore_index=True)

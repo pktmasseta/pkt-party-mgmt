@@ -3,8 +3,14 @@ import streamlit as st
 import uuid
 import qrcode
 from util import *
+import os
+
 
 SPREADSHEET = "https://docs.google.com/spreadsheets/d/1ACCF2-38_0ybYCbSbJzDTO5BX6cHDZIxDEWPLO9F7b8/edit?usp=sharing"
+
+
+template_path = os.path.join(os.path.dirname(__file__), "template.png")
+st.write(template_path)
 
 if check_password():
     st.title("PKT Invite Site")
@@ -29,7 +35,7 @@ if check_password():
         from PIL import Image, ImageDraw, ImageFilter
         import os
 
-        template = Image.open('template.png')
+        template = Image.open(template_path)
         qr = Image.open(f'{uid}.png')
         width, height = qr.size
         os.remove(f'{uid}.png')

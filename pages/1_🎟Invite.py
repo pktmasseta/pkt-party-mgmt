@@ -22,7 +22,7 @@ if check_password():
 
     initials = st.text_input("Initials")
     name = st.text_input("Name of Invite")
-    plus_ones = st.number_input("Plus Ones", min_value=0, max_value=10)
+    plus_ones = st.number_input("Plus Ones", min_value=0, max_value=5)
     generate = st.button("Generate")
 
 

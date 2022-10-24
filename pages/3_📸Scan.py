@@ -16,7 +16,7 @@ if check_password():
 
         data, bbox, straight_qrcode = detector.detectAndDecode(cv2_img)
 
-        if df['Unique ID'].str.contains(data).any():
+        if df['Unique ID'].str.contains(data).any() and data != "":
             st.success("You're on the list!")
         else:
             st.error("You're not in!")

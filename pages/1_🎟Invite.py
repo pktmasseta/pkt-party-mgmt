@@ -10,7 +10,6 @@ SPREADSHEET = "https://docs.google.com/spreadsheets/d/1ACCF2-38_0ybYCbSbJzDTO5BX
 
 
 template_path = os.path.join(os.path.dirname(__file__), "template.png")
-st.write(template_path)
 
 if check_password():
     st.title("PKT Invite Site")

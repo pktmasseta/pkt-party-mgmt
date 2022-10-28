@@ -6,15 +6,22 @@ password = st.secrets["PASSWORD"]
 
 class Sheet:
     def __init__(self, ):
-        self.url = "https://docs.google.com/spreadsheets/d/1ACCF2-38_0ybYCbSbJzDTO5BX6cHDZIxDEWPLO9F7b8/edit#gid=0"
-        gc = gspread.service_account(filename="phi-kappa-theta-d7541d27ff30.json")
-        sh = gc.open_by_url(self.url)
-        self.worksheet = sh.sheet1
+        self.initted = False
+
+    def initialize(self):
+        if not self.initted:
+            self.url = "https://docs.google.com/spreadsheets/d/1ACCF2-38_0ybYCbSbJzDTO5BX6cHDZIxDEWPLO9F7b8/edit#gid=0"
+            gc = gspread.service_account(filename="phi-kappa-theta-d7541d27ff30.json")
+            sh = gc.open_by_url(self.url)
+            self.worksheet = sh.sheet1
+            self.initted = True
 
     def get_df(self):
+        self.initialize()
         return pd.DataFrame(self.worksheet.get_all_records())
 
     def write_df(self, df):
+        self.initialize()
         self.worksheet.update([df.columns.values.tolist()] + df.values.tolist())
 
 sheet = Sheet()

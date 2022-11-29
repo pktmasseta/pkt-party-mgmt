@@ -42,11 +42,11 @@ if check_password():
         width, height = qr.size
         os.remove(f'{uid}.png')
 
-        font = ImageFont.truetype(font_path, 24)
+        font = ImageFont.truetype(font_path, 35)
         scale = 0.5
-        template.paste(qr.resize((round(width * scale), round(height * scale))), (220, 450))
+        template.paste(qr.resize((round(width * scale), round(height * scale))), (340, 610))
         draw = ImageDraw.Draw(template)
-        draw.text((80, 840), f"{initials} - {name}" + ( f" + {plus_ones} plus ones" if plus_ones > 0 else ""),  fill=(255, 255, 255), font=font)
+        draw.text((80, 1050), f"{initials} - {name}" + ( f" + {plus_ones} plus ones" if plus_ones > 0 else ""),  fill=(0, 0, 0), stroke_fill=(255, 255, 255), stroke_width=3, font=font)
 
         st.image(template)
 

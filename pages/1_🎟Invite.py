@@ -9,7 +9,7 @@ import os
 SPREADSHEET = "https://docs.google.com/spreadsheets/d/1ACCF2-38_0ybYCbSbJzDTO5BX6cHDZIxDEWPLO9F7b8/edit?usp=sharing"
 
 
-template_path = os.path.join(os.path.dirname(__file__), "template.jpg")
+template_path = os.path.join(os.path.dirname(__file__), "template.jpeg")
 font_path = os.path.join(os.path.dirname(__file__), "arial.ttf")
 
 if check_password():
@@ -42,11 +42,11 @@ if check_password():
         width, height = qr.size
         os.remove(f'{uid}.png')
 
-        font = ImageFont.truetype(font_path, 35)
-        scale = 0.5
-        template.paste(qr.resize((round(width * scale), round(height * scale))), (340, 610))
+        font = ImageFont.truetype(font_path, 24)
+        scale = 0.28
+        template.paste(qr.resize((round(width * scale), round(height * scale))), (150, 190))
         draw = ImageDraw.Draw(template)
-        draw.text((80, 1050), f"{initials} - {name}" + ( f" + {plus_ones} plus ones" if plus_ones > 0 else ""),  fill=(0, 0, 0), stroke_fill=(255, 255, 255), stroke_width=3, font=font)
+        draw.text((0, 0), f"{initials} - {name}" + ( f" + {plus_ones} plus ones" if plus_ones > 0 else ""),  fill=(0, 0, 0), stroke_fill=(255, 255, 255), stroke_width=3, font=font)
 
         st.image(template)
 

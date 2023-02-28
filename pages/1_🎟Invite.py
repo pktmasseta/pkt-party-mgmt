@@ -28,7 +28,7 @@ if check_password():
 
 
     if generate:
-        uid = uuid.uuid4()
+        uid = str(uuid.uuid4())
         img = qrcode.make(uid)
         img.save(f"{uid}.png")
 
@@ -42,9 +42,9 @@ if check_password():
         width, height = qr.size
         os.remove(f'{uid}.png')
 
-        font = ImageFont.truetype(font_path, 24)
-        scale = 0.28
-        template.paste(qr.resize((round(width * scale), round(height * scale))), (150, 190))
+        font = ImageFont.truetype(font_path, 48)
+        scale = 0.8
+        template.paste(qr.resize((round(width * scale), round(height * scale))), (275, 500))
         draw = ImageDraw.Draw(template)
         draw.text((0, 0), f"{initials} - {name}" + ( f" + {plus_ones} plus ones" if plus_ones > 0 else ""),  fill=(0, 0, 0), stroke_fill=(255, 255, 255), stroke_width=3, font=font)
 

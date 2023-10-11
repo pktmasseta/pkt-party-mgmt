@@ -2,7 +2,7 @@ import streamlit as st
 import gspread
 import pandas as pd
 
-password = st.secrets["PASSWORD"]
+password = "PHIKAP"
 
 class Sheet:
     def __init__(self, ):

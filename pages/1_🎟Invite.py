@@ -50,7 +50,7 @@ if check_password():
         st.image(template)
 
         new_row = {"Initials": initials, "Name": name, "PlusOnes": int(plus_ones), "Checked In": 0, "Unique ID": uid}
-        df2 = df.append(new_row, ignore_index=True)
+        df2 = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
         st.write(df2)
         sheet.write_df(df2)
 

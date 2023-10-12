@@ -44,7 +44,11 @@ if check_password():
 
         font = ImageFont.truetype(font_path, 48)
         scale = 0.65
-        template.paste(qr.resize((round(width * scale), round(height * scale))), (295, 760))
+        qr_width = round(width * scale)
+        qr_height = round(height * scale)
+        template_width = template.size[0]
+        qr_x = round((template_width - qr_width) / 2)
+        template.paste(qr.resize((qr_width, qr_height)), (qr_x, 760))
         draw = ImageDraw.Draw(template)
         draw.text((0, 0), f"{initials} - {name}" + ( f" + {plus_ones} plus ones" if plus_ones > 0 else ""),  fill=(0, 0, 0), stroke_fill=(255, 255, 255), stroke_width=3, font=font)
 

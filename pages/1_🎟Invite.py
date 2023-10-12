@@ -43,8 +43,8 @@ if check_password():
         os.remove(f'{uid}.png')
 
         font = ImageFont.truetype(font_path, 48)
-        scale = 0.8
-        template.paste(qr.resize((round(width * scale), round(height * scale))), (290, 800))
+        scale = 0.7
+        template.paste(qr.resize((round(width * scale), round(height * scale))), (300, 790))
         draw = ImageDraw.Draw(template)
         draw.text((0, 0), f"{initials} - {name}" + ( f" + {plus_ones} plus ones" if plus_ones > 0 else ""),  fill=(0, 0, 0), stroke_fill=(255, 255, 255), stroke_width=3, font=font)
 

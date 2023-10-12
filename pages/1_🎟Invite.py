@@ -10,7 +10,7 @@ SPREADSHEET = "https://docs.google.com/spreadsheets/d/1ACCF2-38_0ybYCbSbJzDTO5BX
 
 
 template_path = os.path.join(os.path.dirname(__file__), "template.jpeg")
-font_path = os.path.join(os.path.dirname(__file__), "arial12.ttf")
+font_path = os.path.join(os.path.dirname(__file__), "arial.ttf")
 
 if check_password():
     st.title("PKT Invite Site")

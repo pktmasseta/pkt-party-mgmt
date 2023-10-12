@@ -1,16 +1,16 @@
 
-import streamlit as st
-import uuid
-import qrcode
-from util import *
 import os
+import uuid
 
+import qrcode
+import streamlit as st
+from util import *
 
 SPREADSHEET = "https://docs.google.com/spreadsheets/d/1ACCF2-38_0ybYCbSbJzDTO5BX6cHDZIxDEWPLO9F7b8/edit?usp=sharing"
 
 
 template_path = os.path.join(os.path.dirname(__file__), "template.jpeg")
-font_path = os.path.join(os.path.dirname(__file__), "arial.ttf")
+font_path = os.path.join(os.path.dirname(__file__), "arial12.ttf")
 
 if check_password():
     st.title("PKT Invite Site")
@@ -32,9 +32,8 @@ if check_password():
         img = qrcode.make(uid)
         img.save(f"{uid}.png")
 
-        from PIL import Image, ImageFont, ImageDraw
         import os
-
+        from PIL import Image, ImageDraw, ImageFont
 
 
         template = Image.open(template_path)
@@ -44,7 +43,7 @@ if check_password():
 
         font = ImageFont.truetype(font_path, 48)
         scale = 0.8
-        template.paste(qr.resize((round(width * scale), round(height * scale))), (275, 500))
+        template.paste(qr.resize((round(width * scale), round(height * scale))), (285, 747))
         draw = ImageDraw.Draw(template)
         draw.text((0, 0), f"{initials} - {name}" + ( f" + {plus_ones} plus ones" if plus_ones > 0 else ""),  fill=(0, 0, 0), stroke_fill=(255, 255, 255), stroke_width=3, font=font)
 

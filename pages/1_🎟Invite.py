@@ -1,9 +1,9 @@
-
 import os
 import uuid
 
 import qrcode
 import streamlit as st
+
 from util import *
 
 SPREADSHEET = "https://docs.google.com/spreadsheets/d/1ACCF2-38_0ybYCbSbJzDTO5BX6cHDZIxDEWPLO9F7b8/edit?usp=sharing"
@@ -25,8 +25,6 @@ if check_password():
     plus_ones = st.number_input("Plus Ones", min_value=0, max_value=5)
     generate = st.button("Generate")
 
-
-
     if generate:
         uid = str(uuid.uuid4())
         img = qrcode.make(uid)
@@ -36,11 +34,10 @@ if check_password():
 
         from PIL import Image, ImageDraw, ImageFont
 
-
         template = Image.open(template_path)
-        qr = Image.open(f'{uid}.png')
+        qr = Image.open(f"{uid}.png")
         width, height = qr.size
-        os.remove(f'{uid}.png')
+        os.remove(f"{uid}.png")
 
         font = ImageFont.truetype(font_path, 48)
         scale = 0.55
@@ -48,15 +45,31 @@ if check_password():
         qr_height = round(height * scale)
         template_width = template.size[0]
         qr_x = round((template_width - qr_width) / 2)
-        template.paste(qr.resize((qr_width, qr_height)), (qr_x, 890))
+        template.paste(qr.resize((qr_width, qr_height)), (qr_x, 860))
         draw = ImageDraw.Draw(template)
-        draw.text((0, 0), f"{initials} - {name}" + ( f" + {plus_ones} plus ones" if plus_ones > 0 else ""),  fill=(0, 0, 0), stroke_fill=(255, 255, 255), stroke_width=3, font=font)
+        draw.text(
+            (0, 0),
+            f"{initials} - {name}"
+            + (f" + {plus_ones} plus ones" if plus_ones > 0 else ""),
+            fill=(0, 0, 0),
+            stroke_fill=(255, 255, 255),
+            stroke_width=3,
+            font=font,
+        )
 
         st.image(template)
 
-        new_row = {"Initials": initials, "Name": name, "PlusOnes": int(plus_ones), "Checked In": 0, "Unique ID": uid}
+        new_row = {
+            "Initials": initials,
+            "Name": name,
+            "PlusOnes": int(plus_ones),
+            "Checked In": 0,
+            "Unique ID": uid,
+        }
         df2 = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
         st.write(df2)
         sheet.write_df(df2)
 
-        st.info(f"If you messed up and want to edit the spreadsheet, click [here]({sheet.url}).")
+        st.info(
+            f"If you messed up and want to edit the spreadsheet, click [here]({sheet.url})."
+        )

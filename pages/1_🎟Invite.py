@@ -15,10 +15,9 @@ font_path = os.path.join(os.path.dirname(__file__), "arial.ttf")
 if check_password():
     st.title("PKT Invite Site")
     df = sheet.get_df()
-    print(df)
 
     f"""
-**Current Total Invite Count:** {df["PlusOnes"].sum() + len(df) - 1}
+**Current Total Invite Count:** {sum(map(int, df["PlusOnes"])) + len(df) - 1}
 """
 
     initials = st.text_input("Initials")
